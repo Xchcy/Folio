@@ -1,0 +1,21 @@
+/* One-time entrance for the landing composition and recent-items panel. */
+[data-reveal].reveal-pending{opacity:0}
+[data-reveal].is-visible{animation:memory-arrive .7s cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0s) both}
+.book-stage[data-reveal]{--reveal-delay:.1s}
+.landing-footer[data-reveal]{--reveal-delay:.16s}
+@keyframes memory-arrive{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* The outer book keeps its slow turn-to-front; the inner layer follows the pointer. */
+.book-parallax{position:absolute;inset:0;display:block;transform-style:preserve-3d;transform:rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transition:transform .18s ease-out}
+.book-trigger.is-tilting .book-parallax{will-change:transform}
+@media(hover:hover) and (pointer:fine){
+  .home-topic[data-pointer-tilt]{transform:perspective(900px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transition:transform .18s ease-out,box-shadow .18s,border-color .18s}
+  body .home-topic[data-pointer-tilt].ui-interactive:hover{transform:perspective(900px) translateY(-2px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg))}
+  .home-topic.is-tilting{will-change:transform}
+}
+@media(prefers-reduced-motion:reduce){
+  [data-reveal].reveal-pending{opacity:1}
+  [data-reveal].is-visible{animation:none}
+  .book-parallax{transform:none;transition:none}
+  body .home-topic[data-pointer-tilt].ui-interactive:hover{transform:none}
+}

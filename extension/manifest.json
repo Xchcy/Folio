@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Folio · 随手记",
+  "version": "1.0.0",
+  "description": "右键收集文字、图片和页面到本机Folio收集箱。",
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "activeTab",
+    "scripting",
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8771/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "收集到 Folio",
+    "default_icon": {
+      "128": "folio-logo.png"
+    }
+  },
+  "commands": {
+    "quick-capture": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+9"
+      },
+      "description": "唤出随手记，粘贴文字或图片",
+      "global": true
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; img-src 'self' data:; connect-src http://127.0.0.1:8771"
+  },
+  "icons": {
+    "128": "folio-logo.png"
+  }
+}

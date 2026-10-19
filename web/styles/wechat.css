@@ -1,0 +1,85 @@
+/* wechat styles: keep feature layout here; shared controls live in ui.css. */
+#wechat-dialog{width:min(1080px,94vw);max-width:1080px;padding:24px;max-height:92vh;overflow:auto}
+.wechat-header{display:flex;align-items:center;gap:12px;justify-content:space-between}
+.wechat-footer{display:flex;align-items:center;gap:12px;justify-content:space-between}
+.selection-tools{display:flex;align-items:center;gap:12px}
+.wechat-header h2{margin:0}
+.wechat-header p{color:#7184a4;font-size:13px}
+.wechat-footer span{color:#7184a4;font-size:13px}
+.wechat-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:24px;margin:20px 0}
+.chat-picker{border-right:1px solid #e1e7f0;padding-right:20px}
+.chat-picker label{font-size:13px}
+.chat-list{max-height:440px;overflow:auto;margin-top:14px}
+.chat-list button{display:flex;flex-direction:column;align-items:flex-start;gap:6px;width:100%;text-align:left;margin-bottom:6px;padding:12px;background:#f3f6fb;border:1px solid transparent;border-radius:8px;overflow-wrap:anywhere}
+.chat-list button.chosen{border-color:#315de4;background:#eaf0ff}
+.chat-list small{color:#7184a4}
+.wechat-filters{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.wechat-filters label{font-size:13px}
+.wechat-filters input{width:100%}
+.selection-tools{justify-content:flex-start;margin:12px 0;flex-wrap:wrap;font-size:13px}
+.selection-tools label{display:flex;align-items:center;gap:6px;margin:0}
+.selection-tools input[type=checkbox]{width:16px;height:16px;accent-color:#315de4}
+.wechat-message input[type=checkbox]{width:16px;height:16px;accent-color:#315de4}
+#wechat-feedback{font-size:13px;color:#657b9f;line-height:1.7;min-height:40px}
+.wechat-messages{max-height:340px;overflow:auto;border-top:1px solid #e1e7f0}
+.wechat-message{display:flex;gap:12px;padding:14px 8px;border-bottom:1px solid #e8edf5;cursor:pointer;margin:0}
+.wechat-message>span{flex:1;min-width:0}
+.message-meta{display:flex;gap:12px;justify-content:space-between;font-size:12px;color:#7184a4}
+.message-text{display:block;white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;margin:8px 0;line-height:1.65}
+.wechat-footer{padding-top:16px;border-top:1px solid #e1e7f0}
+.wechat-footer button{background:#315de4;color:white;white-space:nowrap;padding:12px 18px;border-radius:7px}
+.wechat-footer button:disabled{opacity:.5}
+@media(max-width:760px){.wechat-layout{grid-template-columns:1fr}}
+@media(max-width:760px){.chat-picker{border-right:0;padding-right:0}}
+@media(max-width:760px){.chat-list{max-height:160px}}
+@media(max-width:760px){.wechat-filters{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.wechat-footer{align-items:flex-start;flex-direction:column}}
+@media(max-width:760px){.message-meta{flex-wrap:wrap}}
+@media(min-width:761px){#wechat-dialog[open]{display:flex;flex-direction:column;height:min(800px,92vh);overflow:hidden}}
+@media(min-width:761px){.wechat-header{flex-shrink:0}}
+@media(min-width:761px){.wechat-footer{flex-shrink:0}}
+@media(min-width:761px){.wechat-header p{margin:8px 0 0}}
+@media(min-width:761px){.wechat-layout{flex:1;min-height:0;margin:14px 0}}
+@media(min-width:761px){.chat-picker{min-height:0;display:flex;flex-direction:column}}
+@media(min-width:761px){.message-picker{min-height:0;display:flex;flex-direction:column}}
+@media(min-width:761px){.chat-list{flex:1;min-height:0;max-height:none}}
+@media(min-width:761px){.message-picker h3{margin:0 0 8px;font-size:15px}}
+@media(min-width:761px){.message-picker form{margin:0}}
+@media(min-width:761px){.wechat-filters{gap:8px}}
+@media(min-width:761px){.wechat-filters label{margin:0}}
+@media(min-width:761px){.wechat-filters input{padding:7px;margin-top:4px}}
+@media(min-width:761px){.selection-tools{margin:8px 0}}
+@media(min-width:761px){#wechat-feedback{margin:6px 0;min-height:0;font-size:12px}}
+@media(min-width:761px){.wechat-messages{flex:1;min-height:70px;max-height:none}}
+.wechat-pagination{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 0 0;font-size:12px;flex-shrink:0}
+.wechat-pagination button{padding:6px 8px;color:#315de4;background:#eef3ff;border-radius:5px;white-space:nowrap}
+.wechat-pagination button:disabled{color:#91a0ba;background:#f4f6f9;cursor:default}
+.wechat-pagination span{color:#647996;margin:0 4px}
+.wechat-pagination form{display:flex;align-items:center;gap:6px;margin:0 0 0 auto}
+.wechat-pagination label{margin:0;font-size:12px;white-space:nowrap}
+.wechat-pagination input{width:64px;padding:5px;font-size:12px;margin:0}
+#wechat-import{background:var(--blue);color:white;border-radius:10px;padding:12px;width:100%;text-align:center;margin-bottom:8px}
+.wechat-header h2{letter-spacing:-.5px}
+.wechat-message{border-radius:10px}
+.wechat-message:has(input:checked){background:#eaf0ff;box-shadow:inset 3px 0 var(--blue)}
+@media(max-width:690px){#wechat-import{width:auto;margin:0;padding:10px 14px}}
+.authorized-entry{display:flex;align-items:center;gap:10px}
+.authorized-entry .authorized-chat{flex:1;min-width:0;margin:0}
+.authorized-entry>button{flex:none;font-size:11px;color:#9c4e3f;padding:8px 4px;white-space:nowrap}
+#authorized-dialog .dialog-actions{flex-wrap:wrap}
+#authorize-choices{display:grid;gap:9px;margin:16px 0;max-height:42vh;overflow:auto}
+#authorize-choices input{width:17px;height:17px;flex:none;margin:0}
+#authorize-picker>p{font-size:12px;line-height:1.9}
+#authorize-save{background:#315de4;color:white;border-radius:7px;padding:10px 16px}
+#authorize-feedback{font-size:12px;line-height:1.8}
+#authorize-search-form input{min-width:0;flex:1}
+#authorized-dialog{width:530px;max-width:94vw;max-height:85vh;overflow:auto}
+#authorized-dialog>p{font-size:12px;line-height:1.9}
+#authorized-list{display:grid;gap:9px;margin:16px 0}
+.authorized-chat{display:flex;align-items:center;gap:13px;padding:13px;border:1px solid #dfe6f1;border-radius:8px;cursor:pointer}
+#authorized-list input{width:17px;height:17px;flex:none;margin:0}
+.authorized-chat span{min-width:0}
+.authorized-chat strong{display:block;font-size:13px;color:#294266;overflow-wrap:anywhere}
+.authorized-chat small{display:block;margin-top:5px;font-size:11px;color:#788ca9}
+#authorized-feedback{white-space:pre-wrap;overflow-wrap:anywhere}
+#authorized-read{background:#315de4;color:white;border-radius:7px;padding:10px 16px}

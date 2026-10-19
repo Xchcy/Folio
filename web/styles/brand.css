@@ -1,0 +1,34 @@
+:root{--folio-wordmark:Georgia,"Times New Roman",serif}
+.folio-mark{display:block;width:36px;height:44px;flex-shrink:0;overflow:visible}
+.brand-wordmark{font-family:var(--folio-wordmark);font-weight:600;letter-spacing:-.055em}
+.app-nav .nav-brand{gap:12px;letter-spacing:0}
+.app-nav .brand-description{font-family:"Segoe UI","Microsoft YaHei UI",sans-serif}
+.home-view .nav-brand{font-size:25px;gap:11px}
+.home-view .folio-mark{width:32px;height:39px}
+.landing h1.folio-title{font-family:var(--folio-wordmark);font-size:calc(120 * var(--home-unit));font-weight:500;letter-spacing:-.065em;line-height:1.03}
+.cover-title.folio-cover-title{font-family:var(--folio-wordmark);font-weight:500;font-size:calc(61 * var(--home-unit));letter-spacing:-.045em;top:calc(91 * var(--home-unit));left:calc(42 * var(--home-unit))}
+.sidebar .brand{font-family:var(--folio-wordmark);font-size:29px;letter-spacing:-.04em}
+.sidebar .brand span{font-family:"Segoe UI","Microsoft YaHei UI",sans-serif;letter-spacing:0}
+.intro-active{overflow:hidden}
+.folio-intro{position:fixed;inset:0;z-index:120;display:grid;place-items:center;overflow:hidden;background:#f3f5f8;color:#142450;isolation:isolate;transition:opacity var(--intro-outro-duration,960ms) ease}
+.folio-intro::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 43% 42%,#284ee806,transparent 40%),radial-gradient(ellipse at 60% 60%,#ff784f05,transparent 32%);pointer-events:none}
+.intro-particles{position:absolute;inset:0;width:100%;height:100%;transition:opacity .28s;pointer-events:none}
+.intro-lockup{display:flex;flex-direction:column;align-items:center;transform:translateY(-16px);pointer-events:none}
+.intro-emblem{width:178px;height:216px;opacity:0;transition:opacity .28s;transform-origin:top left}
+.intro-emblem svg{display:block;width:100%;height:100%}
+.intro-name{margin-top:22px;font-family:var(--folio-wordmark);font-size:65px;line-height:1.05;font-weight:500;letter-spacing:-.06em;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}
+.intro-caption{font-size:12px;letter-spacing:2px;color:#78849a;margin:16px 0 0;opacity:0;transition:opacity .4s}
+.is-named .intro-name,.is-named .intro-caption{opacity:1;transform:none}
+.is-formed .intro-emblem{opacity:1}.is-formed .intro-particles{opacity:0}
+.intro-skip{position:absolute;right:40px;bottom:30px;display:flex;align-items:center;gap:20px;padding:10px 14px;border:1px solid #dce3ee;border-radius:8px;color:#64748e;background:#ffffffa6;font-size:12px}
+.intro-skip:hover{color:#284ee8;border-color:#b7c6ef}.intro-skip:focus-visible{outline:3px solid #8199f7;outline-offset:4px}
+.folio-intro.is-leaving{opacity:0}.is-leaving .intro-name,.is-leaving .intro-caption,.is-leaving .intro-skip{opacity:0;transition:opacity .3s}
+@media(max-width:690px){
+  .landing h1.folio-title{font-size:88px;letter-spacing:-.06em}
+  .home-view .nav-brand{font-size:23px}.folio-mark,.home-view .folio-mark{width:28px;height:34px}
+  .cover-title.folio-cover-title{left:30px;top:63px;font-size:45px}
+  .intro-emblem{width:132px;height:160px}.intro-name{font-size:52px;margin-top:20px}.intro-caption{font-size:11px}
+  .intro-skip{right:20px;bottom:22px;font-size:11px}.intro-lockup{transform:translateY(-10px)}
+}
+@media(max-height:500px){.intro-emblem{width:96px;height:117px}.intro-name{font-size:43px;margin-top:12px}.intro-caption{margin-top:10px}}
+@media(prefers-reduced-motion:reduce){.folio-intro{display:none}}

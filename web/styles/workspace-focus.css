@@ -1,0 +1,65 @@
+/* Keep records central; management and evidence appear when requested. */
+body:not(.home-view){grid-template-columns:230px minmax(0,1fr)}
+body:not(.home-view) .workspace-main{max-width:1040px;padding:32px 48px;width:100%}
+.workspace-main>header{margin-bottom:22px;gap:20px}
+.workspace-heading-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+#workspace-wechat.ui-button{padding:10px 14px;border:1px solid var(--ui-primary);color:var(--ui-primary);border-radius:8px;white-space:nowrap}
+#workspace-wechat.ui-button:hover{background:var(--ui-primary-soft)}
+#workspace-add.ui-button{padding:10px 16px;background:var(--ui-primary);color:white;border-radius:8px;white-space:nowrap}
+#workspace-add.ui-button:hover{background:var(--ui-primary-hover)}
+.sidebar>.brand{display:none}
+.sidebar>.side-label:first-of-type{margin-top:0}
+.sidebar #topics{flex:1}
+#workspace .ask-box{padding:12px 14px;margin:0 0 24px;background:var(--ui-surface);box-shadow:none;border:1px solid var(--ui-border);border-radius:10px}
+#workspace .ask-box form{display:flex;gap:10px}
+#workspace .ask-box input#question{min-width:0;flex:1;border:0;background:transparent;box-shadow:none}
+#workspace .ask-box form>button{white-space:nowrap;padding:8px 16px}
+.ask-extras{display:none;padding:6px 4px 2px}
+.ask-box:focus-within .ask-extras,.ask-box:has(.ask-history[open]) .ask-extras,.ask-box.has-history .ask-extras{display:block}
+.ask-history{font-size:12px;color:var(--ui-secondary);margin-top:12px}
+.ask-history summary{cursor:pointer;width:fit-content}
+.ask-history .asof{margin-top:12px;flex-wrap:wrap}
+#workspace .memory-toolbar{display:flex;justify-content:space-between;align-items:center;margin:0;gap:12px}
+#workspace .tabs{flex-wrap:wrap;gap:20px}
+.record-options{position:relative;flex-shrink:0}
+.record-options>summary{cursor:pointer;padding:8px 12px;font-size:12px;color:var(--ui-secondary);border-radius:7px}
+.record-options-panel{position:absolute;right:0;top:100%;z-index:16;width:170px;padding:8px;background:white;border:1px solid var(--ui-border);border-radius:10px;box-shadow:var(--ui-shadow-dialog)}
+.record-options-panel button{display:block;width:100%;text-align:left;padding:10px;font-size:12px;border-radius:6px}
+.record-options-panel button:hover,.record-options-panel button.active{background:var(--ui-primary-soft);color:var(--ui-primary)}
+.record-options-panel hr{border:0;border-top:1px solid var(--ui-border)}
+.task-filters{display:flex;gap:8px;padding:12px 0 0}
+.task-filters button{font-size:12px;padding:7px 12px;border-radius:7px;color:var(--ui-secondary)}
+.task-filters button.active{background:var(--ui-primary-soft);color:var(--ui-primary)}
+.record-context{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:11px;color:var(--ui-muted);padding:14px 0}
+#record-view-label{color:var(--ui-secondary)}
+#paper-summary-status{margin-left:auto}
+#workspace .conflict-box{margin:0 0 18px;padding:12px 16px;font-size:12px}
+.conflict-box summary{cursor:pointer;color:var(--ui-warning);font-weight:600}
+.conflict-box details>div{padding-top:12px}
+body:not(.home-view) .evidence-panel{display:none}
+body:not(.home-view).evidence-open .evidence-panel{display:block;position:fixed;right:0;top:80px;width:min(420px,100vw);height:calc(100dvh - 80px);background:#fff;z-index:20;box-shadow:-12px 0 40px #18264b1c}
+.evidence-header button{display:block}
+.evidence-header{position:sticky;top:-28px;background:white;z-index:1;padding-bottom:16px}
+body:not(.home-view):not(.todos-visible) #todo-widget{display:none}
+#workspace-add-dialog,#workspace-tools-dialog{width:560px;max-width:calc(100vw - 24px);max-height:calc(100dvh - 32px);overflow:auto}
+#workspace-add-dialog .chat-refresh-tools{margin:0;box-shadow:none;padding:16px}
+#workspace-add-dialog .side-bottom{position:static;margin:14px 0 0;padding:0;display:grid;gap:10px}
+#workspace-add-dialog .side-bottom p{margin:0}
+.import-management{margin-top:20px;font-size:12px;color:var(--ui-secondary)}
+.import-management>summary{cursor:pointer}
+#workspace-tools-dialog .model-tools{display:flex;flex-wrap:wrap;margin:0;gap:12px}
+summary:focus-visible{outline:2px solid var(--ui-primary);outline-offset:4px}
+@media(min-width:1550px){body:not(.home-view){grid-template-columns:250px minmax(0,1fr)}}
+@media(max-width:1150px) and (min-width:691px){body:not(.home-view){grid-template-columns:205px minmax(0,1fr)}}
+@media(max-width:690px){
+ body:not(.home-view) .workspace-main{padding:24px 20px}
+ .workspace-main>header{align-items:flex-start;flex-wrap:wrap}
+ .workspace-heading-actions{gap:8px;justify-content:flex-start}
+ .workspace-heading-actions .badge{font-size:9px;padding:5px 8px}
+ #workspace-wechat.ui-button,#workspace-add.ui-button{padding:9px 12px;font-size:12px}
+ #workspace .tabs{gap:14px}
+ #workspace .ask-box form>button{padding:8px;font-size:12px}
+ #paper-summary-status{margin-left:0;width:100%}
+ body:not(.home-view).evidence-open .evidence-panel{top:68px;height:calc(100dvh - 68px)}
+ .sidebar #topics{max-height:120px}
+}

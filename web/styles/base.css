@@ -1,0 +1,65 @@
+/* Document typography, reset, base form fields and accessibility preferences. */
+:root{font-synthesis:none}
+*{box-sizing:border-box}
+body{margin:0;display:grid;min-height:100vh}
+button{font:inherit}
+input{font:inherit}
+select{font:inherit}
+textarea{font:inherit}
+button{cursor:pointer}
+button:disabled{opacity:.5}
+button{border:0;background:none;color:inherit}
+input{border:1px solid #cdd7e5;border-radius:7px;background:white;color:inherit;padding:10px;max-width:100%}
+select{border:1px solid #cdd7e5;border-radius:7px;background:white;color:inherit;padding:10px;max-width:100%}
+textarea{border:1px solid #cdd7e5;border-radius:7px;background:white;color:inherit;padding:10px;max-width:100%}
+main{padding:33px 38px 20px;max-width:1000px;width:100%;margin:auto}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+h1{font-size:28px;font-weight:600;margin:12px 0 0;letter-spacing:-.5px}
+footer{font-size:10px;color:#93a0b4;line-height:1.8;border-top:1px solid var(--line);padding-top:18px;margin-top:10px}
+footer span{display:block;margin-top:3px}
+dialog{width:480px;color:#152743}
+dialog h2{font-size:20px;margin:0 0 22px}
+dialog label{display:block;font-size:12px;color:#667c9e;margin-top:14px}
+dialog label input{display:block;width:100%;margin-top:7px;font-size:13px}
+dialog select{display:block;width:100%;margin-top:7px;font-size:13px}
+dialog textarea{display:block;width:100%;margin-top:7px;font-size:13px}
+dialog textarea{height:90px;resize:vertical}
+dialog p{font-size:11px;line-height:1.8}
+@media(min-width:1550px){main{padding:40px 55px}}
+@media(max-width:1150px){main{padding:28px}}
+@media(max-width:690px){main{padding:24px 18px}}
+@media(max-width:690px){h1{font-size:24px}}
+@media(max-width:690px){header{gap:10px}}
+:root{font-family:"Segoe UI","Microsoft YaHei UI",sans-serif}
+[hidden]{display:none!important}
+body{grid-template-rows:80px 1fr;grid-template-columns:230px minmax(420px,1fr) 320px}
+button{-webkit-tap-highlight-color:transparent}
+a{-webkit-tap-highlight-color:transparent}
+input{-webkit-tap-highlight-color:transparent}
+select{-webkit-tap-highlight-color:transparent}
+textarea{-webkit-tap-highlight-color:transparent}
+button{transition:background .18s,color .18s,box-shadow .18s,transform .18s}
+a{transition:background .18s,color .18s,box-shadow .18s,transform .18s}
+button:active{transform:translateY(1px)}
+button:disabled{cursor:default}
+a:focus-visible{outline:3px solid #e56637;outline-offset:4px}
+button:focus-visible{outline:3px solid #e56637;outline-offset:4px}
+input:focus-visible{outline:3px solid #e56637;outline-offset:4px}
+select:focus-visible{outline:3px solid #e56637;outline-offset:4px}
+textarea:focus-visible{outline:3px solid #e56637;outline-offset:4px}
+body.home-view{display:block}
+dialog{border:1px solid #ffffff;border-radius:22px;background:#fbfcfff5;box-shadow:0 32px 100px #15274330;padding:30px}
+dialog::backdrop{background:#1b29484f;backdrop-filter:blur(6px)}
+dialog input{border-radius:9px}
+dialog select{border-radius:9px}
+dialog textarea{border-radius:9px}
+dialog p{color:#728097}
+@media(min-width:1550px){body{grid-template-columns:250px minmax(500px,1fr) 365px}}
+@media(max-width:1150px){body{grid-template-columns:205px minmax(0,1fr)}}
+@media(max-width:690px){body{display:block}}
+@media(max-width:690px){dialog{padding:22px;max-width:calc(100vw - 24px)}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media(prefers-reduced-motion:reduce){*:before{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media(prefers-reduced-motion:reduce){*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+body{color:var(--ui-text);background:var(--ui-bg)}

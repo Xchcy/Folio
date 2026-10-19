@@ -1,0 +1,24 @@
+import {createWorkspace} from './workspace.js';
+import {initModels} from './features/models.js';
+import {initTodos} from './features/todos.js';
+import {initNavigation} from './features/navigation.js';
+import {initAuthorization} from './features/authorization.js';
+import {initWechat} from './features/wechat.js';
+import {initCapture} from './capture-ui.js';
+import {initMotion} from './motion.js';
+import {initIntro} from './intro.js';
+import {initPapers} from './papers.js';
+import {initRuler} from './features/ruler.js';
+
+const app=createWorkspace();
+app.papers=initPapers(app);
+app.ruler=initRuler(app);
+app.models=initModels(app);
+app.todos=initTodos(app);
+app.navigation=initNavigation(app);
+initAuthorization(app);
+initWechat(app);
+initCapture(app);
+document.addEventListener('memory:navigate',()=>app.navigation.navigatePage());
+app.start();
+initIntro().done.then(()=>initMotion());

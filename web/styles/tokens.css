@@ -1,0 +1,13 @@
+/* Shared product colors, spacing and control tokens. */
+:root{
+  --ui-primary:#284ee8;--ui-primary-hover:#203fc1;--ui-primary-soft:#edf1ff;
+  --ui-accent:#ff784f;--ui-text:#18264b;--ui-secondary:#566681;--ui-muted:#687992;
+  --ui-success:#22745d;--ui-success-soft:#eaf5ef;--ui-warning:#946b16;--ui-warning-soft:#fff7e6;
+  --ui-danger:#b43e44;--ui-danger-soft:#fff0f0;--ui-bg:#f6f7fb;--ui-surface:#fff;--ui-border:#dce3ef;
+  --ui-r-sm:6px;--ui-r-control:8px;--ui-r-card:12px;--ui-r-dialog:16px;
+  --ui-s1:4px;--ui-s2:8px;--ui-s3:12px;--ui-s4:16px;--ui-s6:24px;--ui-s8:32px;
+  --ui-shadow-card:0 2px 8px #18264b05;--ui-shadow-hover:0 5px 18px #18264b0d;--ui-shadow-dialog:0 24px 70px #18264b26;
+  --ui-fast:100ms;--ui-normal:180ms;--ui-ease:cubic-bezier(.2,.7,.2,1);--ui-z-feedback:25;--ui-z-toast:40;
+  --blue:var(--ui-primary);--line:var(--ui-border);
+  --orange:#ff784f;--ink:var(--ui-text);--orange-soft:#fff0e8;--orange-ink:#983d21;
+}
